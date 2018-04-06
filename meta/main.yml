@@ -13,7 +13,9 @@ galaxy_info:
   - name: Amazon Linux
     version: 
     - 2
-  categories:
+  galaxy_tags:
   - system
+  issue_tracker_url: https://github.com/gendigbadig/ansible-icecast/issues
+  
   dependencies: []
 
