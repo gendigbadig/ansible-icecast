@@ -1,0 +1,17 @@
+---
+- name: install the 'Development tools' package group
+  yum:
+    name: "@Development tools"
+    state: present
+
+- name: Install Dependencies
+  package: 
+    name:
+      - libxml2-devel
+      - libxslt-devel
+      - libvorbis-devel
+      - libogg-devel
+      - libtheora-devel
+      - libcurl-devel
+    state: present
+    

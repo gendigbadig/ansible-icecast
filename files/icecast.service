@@ -1,0 +1,10 @@
+[Unit]
+Description=Icecast 2.x Server
+
+[Service]
+ExecStart=/usr/local/bin/icecast -b -c /etc/icecast.xml
+Type=forking
+PIDFile=/var/run/icecast.pid
+
+[Install]
+WantedBy=multi-user.target

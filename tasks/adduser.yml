@@ -1,0 +1,13 @@
+--- 
+- name: Add Icecast Group
+  group:
+    name: "{{ icecast_group }}"
+    state: present
+
+- name: Add Icecast User
+  user: 
+    name: "{{ icecast_user }}"
+    comment: Icecast User 
+    group: "{{ icecast_group }}"
+    shell: /sbin/nologin
+    createhome: no

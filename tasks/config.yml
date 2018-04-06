@@ -1,0 +1,29 @@
+---
+- name: Create logs dir
+  file:
+    path: "/var/log/icecast"
+    state: directory
+    owner: "{{ icecast_user }}"
+    group: "{{ icecast_group }}"
+
+- name: Create access log
+  file:
+    path: "/var/log/icecast/{{ icecast_accesslog }}"
+    state: touch
+    owner: "{{ icecast_user }}"
+    group: "{{ icecast_group }}"
+
+- name: create error and access log
+  file:
+    path: "/var/log/icecast/{{ icecast_errorlog }}"
+    state: touch
+    owner: "{{ icecast_user }}"
+    group: "{{ icecast_group }}"
+
+- name: Create systemd unit
+  copy:
+    src: files/icecast.service
+    dest: /lib/systemd/system/icecast.service
+
+- name: Reload systemd
+  command: systemctl daemon-reload

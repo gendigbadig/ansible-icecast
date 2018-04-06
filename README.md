@@ -1,5 +1,8 @@
-# README.md
 # Ansible Role: icecast
+
+This ansible role forked from [billyrayvalentine/ansible-icecast](https://github.com/billyrayvalentine/ansible-icecast). The difference is this repo using latest icecast source code from git, and compiled it by self. Also, this role created for working with Amazon Linux 2.
+
+
 Version 2.x is a comprehensive and flexible Ansible role to configure and install Icecast.  It can be used to configure Icecast as a standalone system, a master or a slave.  Multiple mounts and relay mounts can be configured if required.  Most aspects of Icecast can be configured for advanced use but there are enough sensible defaults to get a working system with very few role variables.  
 
 Tested on openSUSE and on CentOS.  May work on others.  Requires Ansible version >=2.0
@@ -143,6 +146,13 @@ icecast_http_headers:
   - name: random
     value: hello
     status: 404
+```
+
+# Icecast version
+Icecast [git](https://gitlab.xiph.org/xiph/icecast-server) using branches and tags to identify the version. Default version is `release-2.4.4`.
+
+```yaml
+icecast_version: v2.4.2
 ```
 
 # License

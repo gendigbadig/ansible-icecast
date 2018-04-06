@@ -1,0 +1,6 @@
+---
+- git:
+    repo: https://git.xiph.org/icecast-server.git
+    dest: "{{ icecast_tmpfile.path }}"
+    version: "{{ icecast_version }}"
+    recursive: yes

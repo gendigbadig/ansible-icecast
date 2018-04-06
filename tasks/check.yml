@@ -1,0 +1,4 @@
+---
+- name: check icecast 
+  stat: path=/usr/local/bin/icecast
+  register: icecast_bin

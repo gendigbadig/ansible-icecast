@@ -1,0 +1,10 @@
+---
+- name: Compile Icecast
+  command: "{{ item }}"
+  args:
+    chdir: "{{ icecast_tmpfile.path }}"
+  with_items:
+    - ./autogen.sh
+    - ./configure
+    - make
+    - make install

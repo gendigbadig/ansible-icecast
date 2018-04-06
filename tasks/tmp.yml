@@ -1,0 +1,6 @@
+---
+- name: create temporary build directory
+  tempfile:
+    state: directory
+    prefix: icecast
+  register: icecast_tmpfile

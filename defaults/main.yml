@@ -29,3 +29,6 @@ icecast_listen_sockets:
   - port: 8000
 
 icecast_sources: 2
+icecast_clients: 100
+
+icecast_version: release-2.4.4

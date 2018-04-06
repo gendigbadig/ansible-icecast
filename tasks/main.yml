@@ -1,8 +1,22 @@
 ---
-- name: Install Icecast
-  package: 
-    name: icecast
-    state: present
+- include: check.yml
+
+- include: tmp.yml
+  when: icecast_bin.stat.exists == False
+
+- include: dependencies.yml
+  when: icecast_bin.stat.exists == False
+
+- include: download.yml
+  when: icecast_bin.stat.exists == False
+
+- include: compile.yml
+  when: icecast_bin.stat.exists == False
+
+- include: adduser.yml
+  when: icecast_bin.stat.exists == False
+
+- include: config.yml
 
 - name: Install Icecast configuration file
   template: 
